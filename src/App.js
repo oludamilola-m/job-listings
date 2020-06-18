@@ -5,11 +5,14 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div className="job-listings">
-      {jobs.map((job) => {
-        return <Job {...job} key={job.id.toString()} />;
-      })}
-    </div>
+    <React.Fragment>
+      <header></header>
+      <div className="job-listings">
+        {jobs.map((job) => {
+          return <Job {...job} key={job.id.toString()} />;
+        })}
+      </div>
+    </React.Fragment>
   );
 };
 

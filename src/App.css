@@ -1,12 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
 
+header {
+  background-color: hsl(180, 29%, 50%);
+  background-image: url("./images/bg-header-desktop.svg");
+  height: 9.5em;
+}
+
 .job-listings {
-  border: 5px solid green;
   margin: auto;
-  width: 70%;
+  margin-top: 30px;
+  width: 80%;
 }
 
 body {
+  background-color: hsl(180, 52%, 96%);
   font-family: "Spartan", sans-serif;
 }
 
@@ -87,4 +94,20 @@ body {
   font-weight: 700;
   margin-right: 5px;
   padding: 6px;
+}
+
+@media screen and (max-width: 992px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .job-card {
+    flex-wrap: wrap;
+  }
+
+  .infos,
+  .tags {
+    flex-wrap: wrap;
+  }
 }
