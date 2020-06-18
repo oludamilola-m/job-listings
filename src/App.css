@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+
+.job-listings {
+  border: 5px solid green;
+  margin: auto;
+  width: 70%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Spartan", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.job-card {
+  border: 1px solid red;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px 0 10px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.job-card img {
+  height: 4.8em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.features {
+  margin-left: 15px;
+}
+
+.pill {
+  border-radius: 10px;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 700;
+  margin-left: 5px;
+  padding: 7px 8px 5px 8px;
+  text-transform: uppercase;
+  /* border: 1px solid blue; */
+}
+
+.pill--cyan {
+  background-color: hsl(180, 29%, 50%);
+}
+
+.pill--black {
+  background-color: #000;
+}
+
+.company-name {
+  color: hsl(180, 29%, 50%);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.features > h5 {
+  color: hsl(180, 14%, 20%);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.infos > li {
+  color: hsl(180, 8%, 52%);
+  font-size: 12px;
+  margin-right: 25px;
+  padding-right: 0;
+}
+
+.infos > :first-child {
+  list-style: none;
+}
+
+.infos {
+  display: flex;
+  padding: 0 5px 0 0;
+}
+
+.tags {
+  /* border: 1px solid red; */
+  display: flex;
+  margin-left: 10px;
+  margin-top: 40px;
+  list-style: none;
+  padding-bottom: 22px;
+}
+
+.tag {
+  background-color: hsl(180, 52%, 96%);
+  color: hsl(180, 29%, 50%);
+  font-size: 9px;
+  font-weight: 700;
+  margin-right: 5px;
+  padding: 6px;
 }
