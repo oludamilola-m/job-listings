@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Job from "./components/Job";
-import { jobs } from "./data";
+import api from "./Api";
+import { jobs as defaultJobs } from "./data";
 import "./App.css";
 
 const App = () => {
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    api
+      .get("http://localhost:3004/jobs")
+      .then((data) => setJobs(data))
+      .catch((err) => {
+        console.log(err);
+        setJobs(defaultJobs);
+      });
+  }, []);
+
   const displayJobs = () => {
     return jobs.map((job) => {
       return <Job {...job} key={job.id.toString()} />;
