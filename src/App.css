@@ -29,8 +29,7 @@ body {
   padding: 20px 0 10px 20px;
 }
 
-.job-listings > :first-child,
-.job-listings > :nth-child(2) {
+.job-card:hover {
   border-left: 3px solid hsl(180, 29%, 50%);
 }
 
@@ -69,8 +68,13 @@ body {
 
 .features > h5 {
   color: hsl(180, 14%, 20%);
+  cursor: pointer;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+
+.features > h5:hover {
+  color: hsl(180, 29%, 50%);
 }
 
 .infos > li {
@@ -101,10 +105,16 @@ body {
 .tag {
   background-color: hsl(180, 52%, 96%);
   color: hsl(180, 29%, 50%);
+  cursor: pointer;
   font-size: 9px;
   font-weight: 700;
   margin-right: 5px;
   padding: 6px;
+}
+
+.tag:hover {
+  background-color: hsl(180, 29%, 50%);
+  color: #fff;
 }
 
 @media screen and (max-width: 992px) {
