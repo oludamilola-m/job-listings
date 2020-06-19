@@ -9,7 +9,7 @@ header {
 .job-listings {
   margin: auto;
   margin-top: 30px;
-  width: 80%;
+  width: 50%;
 }
 
 body {
@@ -18,9 +18,20 @@ body {
 }
 
 .job-card {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  border-radius: 4px;
+  background-color: #fff;
+  -webkit-box-shadow: 6px 7px 5px 0px rgba(219, 234, 235, 1);
+  -moz-box-shadow: 6px 7px 5px 0px rgba(219, 234, 235, 1);
+  box-shadow: 6px 7px 5px 0px rgba(219, 234, 235, 1);
   display: flex;
-  padding: 10px 0 10px 20px;
+  margin-bottom: 10px;
+  padding: 20px 0 10px 20px;
+}
+
+.job-listings > :first-child,
+.job-listings > :nth-child(2) {
+  border-left: 3px solid hsl(180, 29%, 50%);
 }
 
 .job-card img {

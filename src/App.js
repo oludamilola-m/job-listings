@@ -4,14 +4,15 @@ import { jobs } from "./data";
 import "./App.css";
 
 const App = () => {
+  const displayJobs = () => {
+    return jobs.map((job) => {
+      return <Job {...job} key={job.id.toString()} />;
+    });
+  };
   return (
     <React.Fragment>
       <header></header>
-      <div className="job-listings">
-        {jobs.map((job) => {
-          return <Job {...job} key={job.id.toString()} />;
-        })}
-      </div>
+      <div className="job-listings">{displayJobs()}</div>
     </React.Fragment>
   );
 };
