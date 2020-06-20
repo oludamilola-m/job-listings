@@ -6,6 +6,15 @@ import "./App.css";
 
 const App = () => {
   const [jobs, setJobs] = useState([]);
+  const [filters, setFilters] = useState([]);
+
+  const addTagToFilters = (tag) => {
+    setFilters([...filters, tag]);
+  };
+
+  useEffect(() => {
+    console.log(filters);
+  }, [filters]);
 
   useEffect(() => {
     api
@@ -19,7 +28,13 @@ const App = () => {
 
   const displayJobs = () => {
     return jobs.map((job) => {
-      return <Job {...job} key={job.id.toString()} />;
+      return (
+        <Job
+          {...job}
+          key={job.id.toString()}
+          addTagToFilters={addTagToFilters}
+        />
+      );
     });
   };
   return (

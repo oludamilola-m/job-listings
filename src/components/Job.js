@@ -1,6 +1,10 @@
 import React from "react";
+import Tag from "./Tag";
 
 const Job = (props) => {
+  const handleClick = (value) => {
+    props.addTagToFilters(value);
+  };
   return (
     <div className="job-card">
       <img src={props.logo} alt="photosnap" />
@@ -17,14 +21,10 @@ const Job = (props) => {
         </ul>
       </div>
       <ul className="tags">
-        <li className="tag">{props.role}</li>
-        <li className="tag">{props.level}</li>
+        <Tag value={props.role} onClick={handleClick} />
+        <Tag value={props.level} onClick={handleClick} />
         {props.languages.map((language) => {
-          return (
-            <li className="tag" key={language}>
-              {language}
-            </li>
-          );
+          return <Tag value={language} key={language} onClick={handleClick} />;
         })}
       </ul>
     </div>
