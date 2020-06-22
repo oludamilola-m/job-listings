@@ -19,6 +19,14 @@ const App = () => {
   };
 
   useEffect(() => {
+    fetchJobs();
+  }, []);
+
+  useEffect(() => {
+    filterJobs();
+  }, [filters]);
+
+  const fetchJobs = () => {
     api
       .get("http://localhost:3004/jobs")
       .then((data) => setJobs(data))
@@ -26,9 +34,13 @@ const App = () => {
         console.log(err);
         setJobs(defaultJobs);
       });
-  }, []);
+  };
 
   const filterJobs = () => {
+    if (filters.length === 0) {
+      fetchJobs();
+      return;
+    }
     const filteredJobs = jobs.filter((job) => {
       const filterAtributes = [
         ...job.languages,
@@ -41,10 +53,6 @@ const App = () => {
     setJobs(filteredJobs);
   };
 
-  useEffect(() => {
-    filterJobs();
-  }, [filters]);
-
   const displayJobs = () => {
     return jobs.map((job) => {
       return (
@@ -56,6 +64,11 @@ const App = () => {
       );
     });
   };
+
+  const clearFilters = () => {
+    setFilters([]);
+  };
+
   return (
     <React.Fragment>
       <header></header>
@@ -71,6 +84,9 @@ const App = () => {
                 );
               })}
             </ul>
+            <span className="clear" onClick={clearFilters}>
+              clear
+            </span>
           </section>
         )}
         <div className="job-listings">{displayJobs()}</div>

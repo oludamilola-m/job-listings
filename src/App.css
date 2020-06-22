@@ -117,7 +117,9 @@ body {
   -webkit-box-shadow: 6px 7px 5px 0px rgba(219, 234, 235, 1);
   -moz-box-shadow: 6px 7px 5px 0px rgba(219, 234, 235, 1);
   box-shadow: 6px 7px 5px 0px rgba(219, 234, 235, 1);
-  padding: 17px 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 17px;
   position: relative;
   top: -30px;
 }
@@ -130,6 +132,19 @@ body {
 
 .job-listings {
   margin-top: 2em;
+}
+
+.clear {
+  color: hsl(180, 8%, 52%);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 2;
+}
+
+.clear:hover {
+  color: hsl(180, 29%, 50%);
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1024px) {
