@@ -2,7 +2,7 @@ import React from "react";
 
 const Tag = (props) => {
   const handleClick = () => {
-    props.onClick(props.value);
+    props.addTagToFilters(props.value);
   };
   return (
     <li className="tag" onClick={handleClick}>

@@ -3,12 +3,11 @@
 header {
   background-color: hsl(180, 29%, 50%);
   background-image: url("./images/bg-header-desktop.svg");
-  height: 9.5em;
+  height: 9.8em;
 }
 
-.job-listings {
+main {
   margin: auto;
-  margin-top: 40px;
   width: 50%;
 }
 
@@ -112,15 +111,39 @@ body {
   color: #fff;
 }
 
+.filters {
+  background-color: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 6px 7px 5px 0px rgba(219, 234, 235, 1);
+  -moz-box-shadow: 6px 7px 5px 0px rgba(219, 234, 235, 1);
+  box-shadow: 6px 7px 5px 0px rgba(219, 234, 235, 1);
+  padding: 17px 10px;
+  position: relative;
+  top: -30px;
+}
+
+.filters ul {
+  display: flex;
+  margin: 0;
+  list-style: none;
+}
+
+.job-listings {
+  margin-top: 2em;
+}
+
 @media screen and (max-width: 1024px) {
   * {
     margin: 0;
     padding: 0;
   }
 
+  main {
+    width: 90%;
+  }
+
   .job-listings {
     margin-top: 4.5em;
-    width: 90%;
   }
 
   .job-card {
