@@ -23,25 +23,28 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    filterJobs();
+    fetchJobs();
   }, [filters]);
 
   const fetchJobs = () => {
+    const endpoint = process.env.REACT_APP_API_ENDPOINT;
     api
-      .get("http://localhost:3004/jobs")
-      .then((data) => setJobs(data))
+      .get(`${endpoint}/jobs`)
+      .then((data) => {
+        filterJobs(data);
+      })
       .catch((err) => {
         console.log(err);
-        setJobs(defaultJobs);
+        filterJobs(defaultJobs);
       });
   };
 
-  const filterJobs = () => {
+  const filterJobs = (unfilteredJobs) => {
     if (filters.length === 0) {
-      fetchJobs();
+      setJobs(unfilteredJobs);
       return;
     }
-    const filteredJobs = jobs.filter((job) => {
+    const filteredJobs = unfilteredJobs.filter((job) => {
       const filterAtributes = [
         ...job.languages,
         ...job.tools,
@@ -69,6 +72,13 @@ const App = () => {
     setFilters([]);
   };
 
+  const removeTag = (tag) => {
+    const updatedFilters = filters.filter((filter) => {
+      return filter !== tag;
+    });
+    setFilters(updatedFilters);
+  };
+
   return (
     <React.Fragment>
       <header></header>
@@ -78,8 +88,14 @@ const App = () => {
             <ul>
               {filters.map((filter, i) => {
                 return (
-                  <li className="tag" key={i.toString()}>
+                  <li className="tag tag--removable" key={i.toString()}>
                     {filter}
+                    <button
+                      className="removeTag"
+                      onClick={() => removeTag(filter)}
+                    >
+                      X
+                    </button>
                   </li>
                 );
               })}
