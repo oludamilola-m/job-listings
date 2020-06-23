@@ -3,6 +3,7 @@ import Job from "./components/Job";
 import api from "./Api";
 import { jobs as defaultJobs } from "./data";
 import "./App.css";
+import Attribution from "./components/Attribution";
 
 const App = () => {
   const [jobs, setJobs] = useState([]);
@@ -107,6 +108,7 @@ const App = () => {
         )}
         <div className="job-listings">{displayJobs()}</div>
       </main>
+      <Attribution />
     </React.Fragment>
   );
 };

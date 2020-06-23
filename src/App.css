@@ -171,6 +171,17 @@ body {
   background-color: #000;
 }
 
+.attribution {
+  color: grey;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.attribution a {
+  color: #5e2791;
+}
+
 @media screen and (max-width: 1024px) {
   * {
     margin: 0;
